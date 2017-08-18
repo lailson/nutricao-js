@@ -1,0 +1,98 @@
+Para utilizar o javascript o código deve estar contido dentro da tag <script></script>
+<script>
+  console.log("Oi mundo");
+</script>
+
+//Cohecendo o DOM = representação do mundo HTML para JS
+document
+
+//Manipular a página
+//Função querySelector
+document.querySelector("h1"); //Pega no Html a tag h1.
+
+//Pegando o conteúdo de texto de uma tag
+var titulo = document.querySelector("h1"); //titulo =  <h1>lailson henrique</h1>
+conteudo = titulo.textContent; //conteudo = lailson henrique
+conteudo = "Dr. Lailson"; //conteudo = Dr. lailson
+
+//Classe
+//Pegando o conteúdo de texto de um elemento de uma class
+<h2 class="titulo">Lailson</h2>
+titulo = document.querySelector(".titulo"); // O ponto representa a classe. titulo = <h2 class="titulo">Lailson</h2>
+titulo.textContent; = lailson
+titulo = henrique;
+
+//ID
+//Pegando o conteúdo de texto de um elemento com ID
+<h1 id="nome">lailson</h1>
+titulo = document.querySelector("#nome");
+
+//Importando arquivo js
+<script src="js/nome_do_arquivo.js"></script>
+
+//Operadores Lógicos
+|| -> OU lógico
+&& -> E lógico
+
+//Obs.: querySelector pega apenas um único elemento. O primeiro elemento.
+//Para pegar todos os elementos deve-se utilizar o querySelectorAll
+
+
+//Loop For
+for (){
+
+}
+
+//estilos_js
+titulo = document.querySelector("h1");
+titulo.style.color = "red"; //não é uma boa prática.em vez de alterar o estilo é melhor alterar a classe.
+//Boa prática -> Adiciona a classe ao título
+titulo.classList.add("classeTitulo");
+
+
+//Eventos
+//Primeira coisa é dizer em qual elemento o evento vai acontencer adiconando um escutador de eventos.
+botao.addEventListener("click", nomaDaFuncao);
+function nomeDaFuncao(){
+  console.log("Olá mundo");
+}
+//ou posso passar logo uma funcao anonima
+botao.addEventListener("click", function(){
+  console.log("funcao anonima");
+});
+
+
+//Botões de form tem tem o comportamento padrao de ao ser clicado apagar o formulário
+//Para evitar isso deve-se utilizar a função event.preventDefault();
+
+
+//Criando elemento
+var pacienteTr = document.createElement("tr");
+
+//Adicionando um td dentro de uma tr
+pacienteTr.appendChild(nomeTd);
+
+//Criando objeto
+function obtemPacienteDoFormulario(form){
+  var paciente = {
+    nome: form.nome.value,
+    peso: form.peso.value,
+    altura: form.altura.value,
+    gordura: form.gordura.value,
+    imc: calculaImc(form.peso.value, form.altura.value)
+  }
+  return paciente;
+}
+
+//Event bubble
+//Passar o evento para o pai, e depois para o pai do pai, etc
+//Delega evento para o pai.
+var tabela = document.querySelector("table");
+tabela.addEventListener("dblclick", function(event){
+  event.target.parentNode.remove();
+});
+
+
+
+--------------------------------
+Curso Jquery
